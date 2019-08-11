@@ -17,7 +17,6 @@
   .effect {
     flex: 1 1 0;
     position: relative;
-    min-height: 33vh;
     transition: all ease-in-out .3s;
     min-width: calc(33.33% / 2);
   }
@@ -245,11 +244,6 @@
     mix-blend-mode: multiply;
   }
   
-  
-
-
-
-
 /* FONT */
   @font-face {
     font-family: 'metropolis-reg';
