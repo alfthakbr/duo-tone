@@ -1,267 +1,267 @@
 * {
-  color: white;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'metropolis-reg';
+	color: white;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'metropolis-reg';
 }
 
 #canvas {
-  margin: auto;
-  background: #0a0a0a;
-  width: 100%;
+	margin: auto;
+	background: #0a0a0a;
+	width: 100%;
 }
 
 /* EFFECT */
-  .effect {
-    padding: 4%;
-    position: relative;
-    transition: all ease-in-out .3s;
-  }
+	.effect {
+		position: relative;
+		transition: all ease-in-out .3s;
+	}
 
-  .effect img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: all ease-in-out .3s;
-  }
+	.effect img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: all ease-in-out .3s;
+	}
 
-  /* Color Overlay position */
-  .effect::after{
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transition: all ease-in-out .5s;
-  }
-  .effect:hover::after, .effect:hover, .effect:hover img{
-    filter: none;
-    -webkit-filter: none;
-    mix-blend-mode: unset !important;
-    background: transparent;
-  }
+	/* Color Overlay position */
+	.effect::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			transition: all ease-in-out .5s;
+	}
+	.effect:hover::after, .effect:hover, .effect:hover img{
+		filter: none;
+		-webkit-filter: none;
+		mix-blend-mode: unset !important;
+		background: transparent;
+	}
 
 /*DUO-TONE*/
-  .green{
-    background-color: #00ff36;
-  }
-  .green img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(1.2);
-    filter: grayscale(100%) contrast(1);
-  }
-  .green::after{
-    background-color: #23278a;
-    mix-blend-mode: lighten;
-  }
+	.emerald{
+		background-color: #00ff36;
+	}
+	.emerald img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(1.2);
+		filter: grayscale(100%) contrast(1);
+	}
+	.emerald::after{
+		background-color: #23278a;
+		mix-blend-mode: lighten;
+	}
 
-  .red-purple{
-    background-color: #e41c2d;
-  }
-  .red-purple img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(1);
-    filter: grayscale(100%) contrast(.8);
-  }
-  .red-purple::after{
-    background-color: #1d3162;
-    mix-blend-mode: lighten;
-  }
+	.wine{
+		background-color: #e41c2d;
+	}
+	.wine img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(1);
+		filter: grayscale(100%) contrast(.8);
+	}
+	.wine::after{
+		background-color: #1d3162;
+		mix-blend-mode: lighten;
+	}
 
-  .retro{
-  background-color: #f1e3a0;
-  }
-  .retro img{
-     mix-blend-mode: darken;
-    -webkit-filter: grayscale(100%) contrast(2);
-    filter: grayscale(100%) contrast(2);
-  }
-  .retro::after{
-    background: linear-gradient(180deg, #f430a9, #f2e782);
-    mix-blend-mode: lighten;
-  }
-
-  .vintage{
-    background-color: #181e59;
-  }
-  .vintage img{
-     mix-blend-mode: lighten;
-    -webkit-filter: grayscale(100%) contrast(.8);
-    filter: grayscale(100%) contrast(.8);
-  }
-  .vintage::after{
-    background-color: #E7E1A6;
-    mix-blend-mode: multiply;
-  }
-
-  .flat-retro{
-    background-color: #FCA300;
-  }
-  .flat-retro img{
-     mix-blend-mode: darken;
-    -webkit-filter: grayscale(100%) contrast(1.5);
-    filter: grayscale(100%) contrast(1.5);
-  }
-  .flat-retro::after{
-     background-color: #e23241;
-    mix-blend-mode: lighten;
-  }
-
-  .blue{
-    background-color: #77acd4;
-  }
-  .blue img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(1.2);
-    filter: grayscale(100%) contrast(1.2);
-  }
-  .blue::after{
-    background-color: #033dc5;
-    mix-blend-mode: lighten;
-  }
-
-  .blue-light{
-    background-color: #caeaf2;
-  }
-  .blue-light img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(1.5);
-    filter: grayscale(100%) contrast(1.5);
-  }
-  .blue-light::after{
-    background-color: #2cd6e1;
-    mix-blend-mode: hard-light;
-  }
-
-  .dark-red{
-    background-color: #ed060b;
-  }
-  .dark-red img{
-      -webkit-filter: grayscale(100%) contrast(1.2);
-      filter: grayscale(100%) contrast(1.2);
-      mix-blend-mode: lighten;
-  }
-  .dark-red::after{
-     background-color: #70e4ee;
-     mix-blend-mode: multiply;
-  }
-
-  .teal{
+	.tany{
     background-color: #d7a621;
   }
-  .teal img{
+  .tany img{
      mix-blend-mode: multiply;
     -webkit-filter: grayscale(100%) contrast(1.2);
     filter: grayscale(100%) contrast(1.2);
   }
-  .teal::after{
+  .tany::after{
     background-color: #0c6249;
     mix-blend-mode: lighten;
   }
 
-  .purple{
-    background-color: #88169d;
-  }
-  .purple img{
-    -webkit-filter: grayscale(100%) contrast(1.2);
-      filter: grayscale(100%) contrast(1.2);
-    mix-blend-mode: lighten;
-  }
-  .purple::after{
-    mix-blend-mode: hard-light;
-    background: linear-gradient(to top left, #75d775, #321a5b);
-  }
+	.tango{
+		background-color: #e0de2c;
+	}
+	.tango img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(.8);
+		filter: grayscale(100%) contrast(.8);
+	}
+	.tango::after{
+		background-color: #b71310;
+		mix-blend-mode: lighten;
+	}
 
-  .pink{
-    background-color: #FCA300;
-  }
-  .pink img{
-    mix-blend-mode: darken; 
-  }
-  .pink::after{
-    background: #282581;
-    mix-blend-mode: lighten;
-    -webkit-filter: contrast(1.1);
-    filter: contrast(1.1);
-  }
+	.garnet{
+		background-color: #ed060b;
+	}
+	.garnet img{
+			-webkit-filter: grayscale(100%) contrast(1.2);
+			filter: grayscale(100%) contrast(1.2);
+			mix-blend-mode: lighten;
+	}
+	.garnet::after{
+		 background-color: #70e4ee;
+		 mix-blend-mode: multiply;
+	}
 
-  .yellow{
-    background-color: #e0de2c;
-  }
-  .yellow img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(.8);
-    filter: grayscale(100%) contrast(.8);
-  }
-  .yellow::after{
-    background-color: #b71310;
-    mix-blend-mode: lighten;
-  }
+	.merigold{
+		background-color: #367ABD;
+	}
+	.merigold img{
+		 mix-blend-mode: lighten;
+		-webkit-filter: grayscale(100%) contrast(1);
+		filter: grayscale(100%) contrast(.8);
+	}
+	.merigold::after{
+		background-color: #F9ED3A;
+		mix-blend-mode: multiply;
+	}
 
-  .orange{
-    background-color: #f65e35;
-  }
-  .orange img{
-     mix-blend-mode: multiply;
-    -webkit-filter: grayscale(100%) contrast(1.2);
-    filter: grayscale(100%) contrast(1.2);
-  }
-  .orange::after{
-    background-color: #1e3265;
-    mix-blend-mode: lighten;
-  }
+	.lapiz{
+		background-color: #77acd4;
+	}
+	.lapiz img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(1.2);
+		filter: grayscale(100%) contrast(1.2);
+	}
+	.lapiz::after{
+		background-color: #033dc5;
+		mix-blend-mode: lighten;
+	}
 
-  .blue-red{
-    background-color: #E50914;
-  }
-  .blue-red img{
-    -webkit-filter: grayscale(100%) contrast(1.2);
-      filter: grayscale(100%) contrast(1.2);
-    opacity:.8;
-  }
-  .blue-red::after{
-     mix-blend-mode: lighten;
-      -webkit-filter: contrast(1.1);
-      filter: contrast(1.1); 
-    background-color: #282581;
-  }
+	.arctic{
+		background-color: #caeaf2;
+	}
+	.arctic img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(.8);
+		filter: grayscale(100%) contrast(.8);
+	}
+	.arctic::after{
+		background-color: #2cd6e1;
+		mix-blend-mode: soft-light;
+	}
 
-  .gold{
-    background-color: #367ABD ;
-  }
-  .gold img{
-     mix-blend-mode: lighten;
-    -webkit-filter: grayscale(100%) contrast(1);
-    filter: grayscale(100%) contrast(.8);
-  }
-  .gold::after{
-    background-color: #F9ED3A;
-    mix-blend-mode: multiply;
-  }
-  
+	.purple-ish{
+		background-color: #B53686;
+	}
+	.purple-ish img{
+		-webkit-filter: grayscale(100%) contrast(1.2);
+			filter: grayscale(100%) contrast(1.2);
+		mix-blend-mode: screen;
+	}
+	.purple-ish::after{
+		mix-blend-mode: soft-light;
+		background-color: #BEDDEF;
+	}
+
+	.not-pink{
+		background-color: #FCA300;
+	}
+	.not-pink img{
+		mix-blend-mode: darken; 
+	}
+	.not-pink::after{
+		background: #282581;
+		mix-blend-mode: lighten;
+		-webkit-filter: contrast(1.1);
+		filter: contrast(1.1);
+	}
+
+	.fuchsia{
+		background-color: #f65e35;
+	}
+	.fuchsia img{
+		 mix-blend-mode: multiply;
+		-webkit-filter: grayscale(100%) contrast(1.2);
+		filter: grayscale(100%) contrast(1.2);
+	}
+	.fuchsia::after{
+		background-color: #1e3265;
+		mix-blend-mode: lighten;
+	}
+
+	.lilac{
+		background-color: #E50914;
+	}
+	.lilac img{
+		-webkit-filter: grayscale(100%) contrast(1.2);
+			filter: grayscale(100%) contrast(1.2);
+		opacity:.8;
+	}
+	.lilac::after{
+		 mix-blend-mode: lighten;
+			-webkit-filter: contrast(1.1);
+			filter: contrast(1.1); 
+		background-color: #282581;
+	}
+
+	.vintage{
+		background-color: #181e59;
+	}
+	.vintage img{
+		 mix-blend-mode: lighten;
+		-webkit-filter: grayscale(100%) contrast(.8);
+		filter: grayscale(100%) contrast(.8);
+	}
+	.vintage::after{
+		background-color: #E7E1A6;
+		mix-blend-mode: multiply;
+	}
+
+	.retro{
+		background-color: #f1e3a0;
+	}
+	.retro img{
+		 mix-blend-mode: darken;
+		-webkit-filter: grayscale(100%) contrast(2);
+		filter: grayscale(100%) contrast(2);
+	}
+	.retro::after{
+		background: linear-gradient(180deg, #f430a9, #f2e782);
+		mix-blend-mode: lighten;
+	}
+
+	.flat-retro{
+		background-color: #FCA300;
+	}
+	.flat-retro img{
+		 mix-blend-mode: darken;
+		-webkit-filter: grayscale(100%) contrast(1.5);
+		filter: grayscale(100%) contrast(1.5);
+	}
+	.flat-retro::after{
+		 background-color: #e23241;
+		mix-blend-mode: lighten;
+	}
+
+	
 /* FONT */
-  @font-face {
-    font-family: 'metropolis-reg';
-    src: url(assets/font/metropolis-regular.otf);
-  }
-  @font-face {
-    font-family: 'metropolis-med';
-    src: url(assets/font/metropolis-medium.otf);
-  }
-  @font-face {
-    font-family: 'metropolis-semi';
-    src: url(assets/font/metropolis-semibold.otf);
-  }
-  @font-face {
-    font-family: 'metropolis-bold';
-    src: url(assets/font/metropolis-bold.otf);
-  }
-  @font-face {
-    font-family: 'metropolis-bl';
-    src: url(assets/font/metropolis-black.otf);
-    font-weight: normal;
-  }
+	@font-face {
+		font-family: 'metropolis-reg';
+		src: url(assets/font/metropolis-regular.otf);
+	}
+	@font-face {
+		font-family: 'metropolis-med';
+		src: url(assets/font/metropolis-medium.otf);
+	}
+	@font-face {
+		font-family: 'metropolis-semi';
+		src: url(assets/font/metropolis-semibold.otf);
+	}
+	@font-face {
+		font-family: 'metropolis-bold';
+		src: url(assets/font/metropolis-bold.otf);
+	}
+	@font-face {
+		font-family: 'metropolis-bl';
+		src: url(assets/font/metropolis-black.otf);
+		font-weight: normal;
+	}
 

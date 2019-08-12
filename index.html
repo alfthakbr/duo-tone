@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	<title>duo-tone</title>
 </head>
 <body class="bg-black">
@@ -17,9 +21,25 @@
 	</div>
 
 	<div class="container mx-auto mt-6 pt-6">
-		<!-- get -->
-			
+		
+		<div class="custom-file my-6">
+      <input type="file" class="custom-file-input" id="upload-file">
+      <label for="upload-file" class="custom-file-label">Upload a Picture</label>
+    </div>
 
+    <div class="flex justify-center my-6">
+    	<div class="w-64">
+			  <canvas id="canvas"></canvas>
+    	</div>
+    </div>
+    <div class="flex mx-auto">
+		  <p class="process-message"></p>
+		</div>
+    
+    <div class="flex my-6 justify-center">
+	    <button id="download-btn" class="border font-bold text-center px-4 py-2 m-2">Download</button>
+		</div>
+		<!-- effects -->
 			<div style="margin: 100px 0">
 				<div class="flex my-6 pt-6">
 					<div class="w-full text-center">	
@@ -28,192 +48,165 @@
 						</h1>
 					</div>
 				</div>
+
+				<div class="flex mx-auto justify-center">
+					<button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Just Black</button>
+					<button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Clearly White</button>
+					<button id="not-pink-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Kinda Blue</button>
+					<button id="purple-ish-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Purple-ish</button>
+				  <button id="not-pink-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Not Pink</button>
+				</div>
 				
-				<div class="flex justify-center">
-				  <button class="border font-bold text-center px-4 py-2 m-2">Emerald</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Wine</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Tealy</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Tango</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Vintage</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Merigold</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Lapiz</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Arctic</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Purple-ish</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Not Pink</button>
-				</div>
-				<div class="flex justify-center">
-					<button class="border font-bold text-center px-4 py-2 m-2">Fuchsia</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Lilac</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Retro</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Flat Retro</button>
-				  <button class="border font-bold text-center px-4 py-2 m-2">Garnet</button>
+				<div class="flex mx-auto justify-center">
+					
+				  <button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Emerald</button>
+				  <button id="wine-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Wine</button>
+				  <button id="tany-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Tany</button>
+				  <button id="tango-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Tango</button>
+ 				  <button id="garnet-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Garnet</button>
+				  <button id="merigold-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Merigold</button>
+				  
+					<button id="lapiz-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Lapiz</button>
+				  
 				</div>
 
-		</div>
-
-		<!-- Overview -->
-			<div class="flex my-6 py-6">
-				<div class="w-full text-center">	
-					<h1 class="text-5xl font-bold">
-					  15 Colorized effects
-					</h1>
+				<div class="flex mx-auto justify-center">
+				  <button id="arctic-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Arctic</button>		
+					<button id="fuchsia-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Fuchsia</button>
+				  <button id="lilac-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Lilac</button>
+ 				  <button id="vintage-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Vintage</button>
+				  <button id="retro-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Retro</button>
+				  <button id="flat-retro-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Flat-retro</button>
 				</div>
 			</div>
 
-			<div class="flex">
-				<!-- Emerald -->  
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect green">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Emerald</h1>
-						</div>
-						<img class="object-cover" src="assets/img/2.jpg">
+		<!-- Example -->
+		<div class="flex-col m-6">
+			<!-- Emerald -->
+			<div class="flex justify-center my-6">
+				<div class="effect emerald w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Emerald</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Wine -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect red-purple">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Wine</h1>
-						</div>
-						<img class="object-cover" src="assets/img/2.jpg">
+				<div class="effect wine w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Wine</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
-				<!-- Tealy -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect teal">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Tealy</h1>
-						</div>
-						<img class="object-cover" src="assets/img/2.jpg">
+				<!-- Tany -->
+				<div class="effect tany w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Tany</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
-			</div>
-
-			<div class="flex">
 				<!-- Tango -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect yellow">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Tango</h1>
-						</div>
-						<img class="object-cover" src="assets/img/9.jpg">
+				<div class="effect tango w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Tango</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Vintage -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect vintage">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Vintage</h1>
-						</div>
-						<img class="object-cover" src="assets/img/16.jpg">
+				<div class="effect vintage w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Vintage</h1>
 					</div>
-				</div>
-				<!-- Merigold -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect gold">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Merigold</h1>
-						</div>
-						<img class="object-cover" src="assets/img/17.jpg">
-					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 			</div>
+		</div>
 
-			<div class="flex">
-				<!-- Lapiz -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect blue">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Lapiz</h1>
-						</div>
-						<img class="object-cover" src="assets/img/10.jpg">
+		<div class="flex-col m-6">
+			<!-- Merigold -->
+			<div class="flex justify-center my-6">
+				<div class="effect merigold w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Merigold</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Lapiz -->
+				<div class="effect lapiz w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Lapiz</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Arctic -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect blue-light">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Arctic</h1>
-						</div>
-						<img class="object-cover" src="assets/img/6.jpg">
+				<div class="effect arctic w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Arctic</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Purple-ish -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect purple">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Purple-ish</h1>
-						</div>
-						<img class="object-cover" src="assets/img/11.jpg">
+				<div class="effect purple-ish w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Purple-ish</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Not-pink -->
+				<div class="effect not-pink w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Not Pink</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 			</div>
+		</div>
 
-			<div class="flex">
-				<!-- Not Pink -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect pink">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Not Pink</h1>
-						</div>
-						<img class="object-cover" src="assets/img/20.jpg">
+		<div class="flex-col m-6">
+			<!-- Fuchsia -->
+			<div class="flex justify-center my-6">
+				<div class="effect fuchsia w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Fuchsia</h1>
 					</div>
-				</div>
-				<!-- Fuchsia -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect orange">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Fuchsia</h1>
-						</div>
-						<img class="object-cover" src="assets/img/21.jpg">
-					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Lilac -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect blue-red">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Lilac</h1>
-						</div>
-						<img class="object-cover" src="assets/img/13.jpg">
+				<div class="effect lilac w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Lilac</h1>
 					</div>
-				</div>
-			</div>
-
-			<div class="flex">
-				<!-- Retro -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect retro">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Retro</h1>
-						</div>
-						<img class="object-cover" src="assets/img/19.png">
-					</div>
-				</div>
-				<!-- Flat Retro -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect flat-retro">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Flat Retro</h1>
-						</div>
-						<img class="object-cover" src="assets/img/18.jpg">
-					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 				<!-- Garnet -->
-				<div class="w-1/2 sm:w-auto md:w-1/2 lg:w-1/3 xl:w-1/1 my-auto">
-					<div class="effect dark-red">
-						<div class="w-full sm:w-auto md:w-1/2 lg:w-auto xl:auto p-6 bottom-0 absolute z-50">
-							<h1 class="text-base sm:text-2xl md:text-4xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">Garnet</h1>
-						</div>
-						<img class="object-cover" src="assets/img/8.jpg">
+				<div class="effect garnet w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Garnet</h1>
 					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Retro -->
+				<div class="effect retro w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Retro</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- flat-retro -->
+				<div class="effect flat-retro w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Flat-retro</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
 			</div>
+		</div>
 
 	</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha256-Ttj6Ke2Nzuxi5upPlHetkZxBtdTq0LV1Z6BEUUsKPfs=" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha256-Ttj6Ke2Nzuxi5upPlHetkZxBtdTq0LV1Z6BEUUsKPfs=" crossorigin="anonymous"></script>
+
+		<script src="main.js"></script>
+
 
 </body>
 </html>
