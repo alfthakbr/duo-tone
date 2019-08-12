@@ -9,7 +9,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1);
+				this.contrast(22);
 				this.newLayer(function() {
 					this.fillColor("#00ff36");
 					this.setBlendingMode("multiply");
@@ -26,7 +26,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(.8);
+				this.contrast(18);
 				this.newLayer(function() {
 					this.fillColor("#e41c2d");
 					this.setBlendingMode("multiply");
@@ -43,7 +43,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(22);
 				this.newLayer(function() {
 					this.fillColor("#d7a621");
 					this.setBlendingMode("multiply");
@@ -60,7 +60,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(.8);
+				this.contrast(18);
 				this.newLayer(function() {
 					this.fillColor("#e0de2c");
 					this.setBlendingMode("multiply");
@@ -77,7 +77,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(22);
 				this.newLayer(function() {
 					this.fillColor("#ed060b");
 					this.setBlendingMode("lighten");
@@ -95,7 +95,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(.8);
+				this.contrast(18);
 				this.newLayer(function() {
 					this.fillColor("#367ABD");
 					this.setBlendingMode("lighten");
@@ -108,11 +108,11 @@ $(document).ready(function() {
 			});
 		});
 
-		$("#lapiz-add").on("click", function(e) {
+		$("#kinda-blue-add").on("click", function(e) {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(22);
 				this.newLayer(function() {
 					this.fillColor("#77acd4");
 					this.setBlendingMode("multiply");
@@ -125,18 +125,18 @@ $(document).ready(function() {
 			});
 		});
 
-		$("#arctic-add").on("click", function(e) {
+		$("#lapiz-add").on("click", function(e) {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(18);
 				this.newLayer(function() {
 					this.fillColor("#caeaf2");
 					this.setBlendingMode("multiply");
 				});
 				this.newLayer(function() {
 					this.fillColor("#2cd6e1");
-					this.setBlendingMode("lighten");
+					this.setBlendingMode("softLight");
 				});
 				this.render();
 			});
@@ -146,7 +146,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(22);
 				this.newLayer(function() {
 					this.fillColor("#B53686");
 					this.setBlendingMode("screen");
@@ -170,7 +170,7 @@ $(document).ready(function() {
 					this.fillColor("#282581");
 					this.setBlendingMode("lighten");
 				});
-				this.contrast(1.1);
+				this.contrast(11);
 				this.render();
 			});
 		});
@@ -179,7 +179,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.2);
+				this.contrast(12);
 				this.newLayer(function() {
 					this.fillColor("#f65e35");
 					this.setBlendingMode("multiply");
@@ -214,7 +214,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(.8);
+				this.contrast(18);
 				this.newLayer(function() {
 					this.fillColor("#181e59");
 					this.setBlendingMode("lighten");
@@ -231,7 +231,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(2);
+				this.contrast(20);
 				this.newLayer(function() {
 					this.fillColor("#f1e3a0");
 					this.setBlendingMode("darken");
@@ -248,7 +248,7 @@ $(document).ready(function() {
 			Caman("#canvas", function() {
 				this.revert(false);
 				this.greyscale();
-				this.contrast(1.5);
+				this.contrast(15);
 				this.newLayer(function() {
 					this.fillColor("#FCA300");
 					this.setBlendingMode("darken");

@@ -50,7 +50,7 @@
 	.emerald img{
 		 mix-blend-mode: multiply;
 		-webkit-filter: grayscale(100%) contrast(1.2);
-		filter: grayscale(100%) contrast(1);
+		filter: grayscale(100%) contrast(1.2);
 	}
 	.emerald::after{
 		background-color: #23278a;
@@ -122,28 +122,28 @@
 		mix-blend-mode: multiply;
 	}
 
-	.lapiz{
+	.kinda-blue {
 		background-color: #77acd4;
 	}
-	.lapiz img{
+	.kinda-blue img{
 		 mix-blend-mode: multiply;
 		-webkit-filter: grayscale(100%) contrast(1.2);
 		filter: grayscale(100%) contrast(1.2);
 	}
-	.lapiz::after{
+	.kinda-blue::after{
 		background-color: #033dc5;
 		mix-blend-mode: lighten;
 	}
 
-	.arctic{
+	.lapiz{
 		background-color: #caeaf2;
 	}
-	.arctic img{
+	.lapiz img{
 		 mix-blend-mode: multiply;
 		-webkit-filter: grayscale(100%) contrast(.8);
 		filter: grayscale(100%) contrast(.8);
 	}
-	.arctic::after{
+	.lapiz::after{
 		background-color: #2cd6e1;
 		mix-blend-mode: soft-light;
 	}
@@ -224,7 +224,7 @@
 		filter: grayscale(100%) contrast(2);
 	}
 	.retro::after{
-		background: linear-gradient(180deg, #f430a9, #f2e782);
+		background-color: #f430a9;
 		mix-blend-mode: lighten;
 	}
 
@@ -262,6 +262,5 @@
 	@font-face {
 		font-family: 'metropolis-bl';
 		src: url(assets/font/metropolis-black.otf);
-		font-weight: normal;
 	}
 

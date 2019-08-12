@@ -5,73 +5,72 @@
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<title>duo-tone</title>
 </head>
 <body class="bg-black">
 
-	<div class="container mx-auto py-12">
-		<div class="flex mb-4">
+	<div class="container mx-auto pt-12">
+		<div class="flex">
 			<div class="w-full h-auto text-center">
-				<h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl;">DUO-TONE</h1>
-				<p>	by alfthakbr</p>
+				<h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl" style="font-family: metropolis-bl">DUO-TONE</h1>
+				<p style="color: maroon; font-family: metropolis-bold" class="text-lg">Beta version</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="container mx-auto mt-6 pt-6">
-		
-		<div class="custom-file my-6">
-      <input type="file" class="custom-file-input" id="upload-file">
-      <label for="upload-file" class="custom-file-label">Upload a Picture</label>
-    </div>
-
-    <div class="flex justify-center my-6">
-    	<div class="w-64">
+	<div class="container mx-auto">
+		<div style="margin: 100px 0">
+	    <div class="w-64 flex mx-auto justify-center">
 			  <canvas id="canvas"></canvas>
-    	</div>
-    </div>
-    <div class="flex mx-auto">
-		  <p class="process-message"></p>
+	    </div>
+	    <div class="flex mx-auto">
+			  <p class="process-message"></p>
+			</div>
+			  
+	    <div class="flex my-6 justify-center">
+		    <div class="w-64 my-auto">
+					<div class="custom-file">
+			      <input type="file" class="custom-file-input" id="upload-file">
+			      <label for="upload-file" class="custom-file-label">Upload</label>
+			    </div>
+			  </div>
+	    	<div class="w-auto my-auto ml-6">
+			    <button id="download-btn" class="border font-bold text-center px-4 py-2">Download</button>
+		    </div>
+			</div>
 		</div>
-    
-    <div class="flex my-6 justify-center">
-	    <button id="download-btn" class="border font-bold text-center px-4 py-2 m-2">Download</button>
-		</div>
+
 		<!-- effects -->
 			<div style="margin: 100px 0">
 				<div class="flex my-6 pt-6">
 					<div class="w-full text-center">	
-						<h1 class="text-5xl font-bold">
+						<h1 class="text-5xl" style="font-family: metropolis-bold">
 						  Effects
 						</h1>
 					</div>
 				</div>
 
 				<div class="flex mx-auto justify-center">
-					<button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Just Black</button>
-					<button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Clearly White</button>
-					<button id="not-pink-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Kinda Blue</button>
+					<button id="just-black-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Just Black</button>
+					<button id="clearly-white-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Clearly White</button>
+					<button id="kinda-blue-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Kinda Blue</button>
 					<button id="purple-ish-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Purple-ish</button>
 				  <button id="not-pink-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Not Pink</button>
 				</div>
 				
 				<div class="flex mx-auto justify-center">
-					
 				  <button id="emerald-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Emerald</button>
 				  <button id="wine-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Wine</button>
 				  <button id="tany-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Tany</button>
 				  <button id="tango-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Tango</button>
  				  <button id="garnet-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Garnet</button>
 				  <button id="merigold-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Merigold</button>
-				  
-					<button id="lapiz-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Lapiz</button>
-				  
 				</div>
 
 				<div class="flex mx-auto justify-center">
-				  <button id="arctic-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Arctic</button>		
+				  <button id="lapiz-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Lapiz</button>		
 					<button id="fuchsia-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Fuchsia</button>
 				  <button id="lilac-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Lilac</button>
  				  <button id="vintage-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Vintage</button>
@@ -79,11 +78,52 @@
 				  <button id="flat-retro-add" class="filter-btn border font-bold text-center px-4 py-2 m-2">Flat-retro</button>
 				</div>
 			</div>
+		
 
 		<!-- Example -->
-		<div class="flex-col m-6">
+		<div class="flex-col m-6" style="margin-top: 100px">
 			<!-- Emerald -->
 			<div class="flex justify-center my-6">
+				<div class="effect emerald w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Just Black</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Wine -->
+				<div class="effect wine w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Clearly White</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Kinda Blue -->
+				<div class="effect kinda-blue w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Kinda Blue</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Purple-ish -->
+				<div class="effect purple-ish w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Purple-ish</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+				<!-- Not-pink -->
+				<div class="effect not-pink w-64 mx-3">
+					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
+						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Not Pink</h1>
+					</div>
+					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
+				</div>
+			</div>
+		</div>
+
+		<div class="flex-col m-6">
+			<div class="flex justify-center my-6">
+				<!-- Emerald -->
 				<div class="effect emerald w-64 mx-3">
 					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
 						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Emerald</h1>
@@ -122,8 +162,8 @@
 		</div>
 
 		<div class="flex-col m-6">
-			<!-- Merigold -->
 			<div class="flex justify-center my-6">
+				<!-- Merigold -->
 				<div class="effect merigold w-64 mx-3">
 					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
 						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Merigold</h1>
@@ -137,33 +177,7 @@
 					</div>
 					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
-				<!-- Arctic -->
-				<div class="effect arctic w-64 mx-3">
-					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
-						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Arctic</h1>
-					</div>
-					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
-				</div>
-				<!-- Purple-ish -->
-				<div class="effect purple-ish w-64 mx-3">
-					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
-						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Purple-ish</h1>
-					</div>
-					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
-				</div>
-				<!-- Not-pink -->
-				<div class="effect not-pink w-64 mx-3">
-					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
-						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Not Pink</h1>
-					</div>
-					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
-				</div>
-			</div>
-		</div>
-
-		<div class="flex-col m-6">
-			<!-- Fuchsia -->
-			<div class="flex justify-center my-6">
+				<!-- Fuchsia -->
 				<div class="effect fuchsia w-64 mx-3">
 					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
 						<h1 class="text-center w-auto text-4xl" style="font-family: metropolis-bold">Fuchsia</h1>
@@ -184,6 +198,11 @@
 					</div>
 					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
+			</div>
+		</div>
+
+		<div class="flex-col m-6">
+			<div class="flex justify-center my-6">
 				<!-- Retro -->
 				<div class="effect retro w-64 mx-3">
 					<div class="w-auto mt-4 absolute z-50" style="writing-mode: vertical-lr; transform: rotate(180deg); padding: 10px">
@@ -198,6 +217,7 @@
 					</div>
 					<img class="object-cover object-left-top" src="assets/img/16.jpg">	
 				</div>
+
 			</div>
 		</div>
 
